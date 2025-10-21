@@ -8,7 +8,7 @@ on:
 jobs:
   sync:
 
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
       
     steps:
       - uses: tgymnich/fork-sync@v2.0

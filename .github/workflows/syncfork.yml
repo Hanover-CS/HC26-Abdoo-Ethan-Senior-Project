@@ -1,0 +1,19 @@
+name: Sync Fork
+
+on:
+  schedule: 
+    - cron: '30 * * * *' # runs every 30
+  workflow_dispatch: 
+
+  jobs:
+    sync:
+
+      runs-on: unbuntu-latest
+
+      steps:
+        - uses: tgymnich/fork-sync@v2.0
+          with:
+            owner: Hanover-CS
+            repo: HC26-Abdoo-Ethan-Senior-Project
+            merge_method: rebase
+            

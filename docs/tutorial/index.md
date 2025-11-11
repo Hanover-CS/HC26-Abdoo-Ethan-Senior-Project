@@ -1,16 +1,11 @@
-# Using Django For Your Web Page
+# PantherConnect Django Tutorial
 
-**Target audience:** Hanover students and beginner web developers who know basic Python and want to learn how to create a website using Django.
+Welcome! This tutorial teaches beginners how to create and run a basic Django web application.
 
-## Learning objectives
-By the end of this tutorial you will be able to:
+## Table of Contents
 
-
-## Prerequisites
-- Python 3.x and pip installed.
-- Basic familiarity with Django views and the filesystem.
-- Git and a GitHub account
-- Recommended: a code editor 
-
-## Tutorial structure 
----
+1. [Introduction](intro.md)
+2. [Setup & Prerequisites](setup.md)
+3. [Creating Your First Django App](creating-app.md)
+4. [Handling Requests & Views](handling-requests.md)
+5. [Practice Exercises](exercises.md)

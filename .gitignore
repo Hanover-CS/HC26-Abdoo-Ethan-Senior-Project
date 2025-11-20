@@ -1,1 +1,3 @@
 docs/_site
+db.sqlite3
+__pycache__

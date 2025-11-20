@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Club List</title>
-</head>
-<body>
-    <h1>Clubs</h1>
-    <ul>
-        {% for club in clubs %}
-            <li><strong>{{ club.name }}</strong>: {{ club.description }}</li>
-        {% empty %}
-            <li>No clubs yet.</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'add_club' %}">Add a Club</a>
-</body>
-</html>
+<!--
+File: club_list.html
+Purpose: Displays all the clubs in a card layout.
+-->
+
+
+{% extends "clubs/base.html" %}
+
+{% block content %}
+
+<h2>All Clubs</h2>
+{% for club in clubs %}
+<div class="club-card">
+    <h2>{{ club.name }}</h2>
+    <p>{{ club.description }}</p>
+    <p><strong>City:</strong> {{ club.city }}</p>
+    <p><strong>Country:</strong> {{ club.country }}</p>
+    <p><strong>Contact:</strong> {{ club.contact_email }}</p>
+    <a href="{% url 'delete_club' club.id %}" class="delete-btn">Delete</a>
+</div>
+
+  {% empty %}
+    <p>No clubs added yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

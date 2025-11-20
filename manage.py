@@ -1,4 +1,7 @@
-#!/usr/bin/env python
+# manage.py
+# Django’s command-line utility for administrative tasks.
+# Used to run the development server, migrations, and other project commands.
+
 """Django's command-line utility for administrative tasks."""
 import os
 import sys

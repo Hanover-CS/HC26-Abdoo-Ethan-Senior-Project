@@ -1,0 +1,165 @@
+/*
+File: style.css
+Purpose: Styles for the club list and add club pages.
+*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Page Titles */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Clubs List Styles */
+.club-list {
+    list-style: none;
+    padding: 0;
+}
+
+.club-item {
+    background: white;
+    padding: 18px;
+    margin: 16px 0;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
+    border-left: 6px solid #4c6ef5;
+}
+
+.club-item strong {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 6px;
+    color: #2a2a2a;
+}
+
+.club-item p {
+    margin: 0;
+    color: #555;
+    line-height: 1.4em;
+}
+
+
+/* Add Club Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #4c6ef5;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3b5bdb;
+}
+
+/* Club Card */
+.club-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+
+.club-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+
+/* Navbar */
+.navbar {
+    background: #ce0f0f;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.nav-brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Message style */
+
+.messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 10px 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+.message.success {
+    background: #38b000;
+}
+
+.message.error {
+    background: #d00000;
+}
+
+/* Delete Button */
+
+
+.delete-btn {
+    color: white;
+    background-color: #e74c3c;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}

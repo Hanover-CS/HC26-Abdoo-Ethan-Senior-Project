@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PantherConnect</title>
+    <link rel="stylesheet" href="{% static 'clubs/css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/clubs/" class="nav-brand">Welcome to PantherConnect!</a>
+        <div class="nav-links">
+            <a href="/clubs/">Clubs</a>
+            <a href="/clubs/add/">Add Club</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>

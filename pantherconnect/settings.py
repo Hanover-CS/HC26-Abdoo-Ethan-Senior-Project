@@ -3,6 +3,8 @@
 # Contains database settings, installed apps, middleware, templates, and static files configuration.
 
 from pathlib import Path
+import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -67,12 +69,22 @@ WSGI_APPLICATION = "pantherconnect.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
+DATABASES = {}
+
+if os.environ.get("USE_POSTGRES") == "1":
+    DATABASES["default"] = dj_database_url.parse(
+        os.environ.get("DATABASE_URL"),
+        conn_max_age=600,
+        ssl_require=True
+    )
+else:
+    # Default to SQLite for local dev
+    DATABASES["default"] = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
-}
+
+
 
 
 # Password validation

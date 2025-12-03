@@ -1,0 +1,24 @@
+<!--
+Home page template.
+Extends base.html.
+Displays:
+- Logo
+- Welcome message
+- Links to view all clubs and add a new club
+-->
+
+{% extends "clubs/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="home-logo">
+        <img src="{% static 'clubs/images/pantherconnect-logo.png' %}" alt="PantherConnect Logo">
+    </div>
+    <h2>Welcome to Panther Connect!</h2>
+    <div class="home-buttons">
+    <p>Discover and connect with all your campus clubs.</p>
+    
+    <a href="/clubs/" class="button">View All Clubs</a>
+    <a href="/clubs/add/" class="button">Add a Club</a>
+    </div>
+{% endblock %}

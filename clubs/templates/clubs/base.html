@@ -1,30 +1,43 @@
+<!--
+Base template for the clubs app.
+Defines the main layout including:
+- Navigation bar
+- Messages block
+- Static file linking for CSS
+Other templates extend this base to reuse layout and styling.
+-->
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PantherConnect</title>
     <link rel="stylesheet" href="{% static 'clubs/css/style.css' %}">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
-        <a href="/clubs/" class="nav-brand">Welcome to PantherConnect!</a>
+        <a href="/" class="nav-brand">PantherConnect</a>
         <div class="nav-links">
             <a href="/clubs/">Clubs</a>
             <a href="/clubs/add/">Add Club</a>
         </div>
     </nav>
 
+    <!-- Main content area -->
     <div class="container">
         {% if messages %}
-    <div class="messages">
-        {% for message in messages %}
-            <div class="message {{ message.tags }}">{{ message }}</div>
-        {% endfor %}
-    </div>
-{% endif %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="message {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
 
+        
         {% block content %}{% endblock %}
     </div>
-</body>
 
+</body>
 </html>

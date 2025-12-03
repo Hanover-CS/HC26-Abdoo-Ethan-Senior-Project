@@ -11,8 +11,7 @@ from django.contrib import messages
 
 
 from django.shortcuts import render, redirect
-from .models import Club
-from .forms import ClubForm
+
 
 def add_club(request):
     if request.method == "POST":
@@ -37,3 +36,6 @@ def delete_club(request, club_id):
     club = Club.objects.get(id=club_id)
     club.delete()
     return redirect("club_list")
+
+def home(request):
+    return render(request, "home.html")

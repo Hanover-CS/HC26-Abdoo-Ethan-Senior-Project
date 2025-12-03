@@ -6,7 +6,7 @@ Purpose: Styles for the club list and add club pages.
 
 body {
     font-family: Arial, sans-serif;
-    background: #f5f7fa;
+    background: #DA121A;
     margin: 0;
     padding: 0;
 }
@@ -33,7 +33,7 @@ h1, h2 {
 }
 
 .club-item {
-    background: white;
+    background: rgb(206, 8, 8);
     padding: 18px;
     margin: 16px 0;
     border-radius: 12px;
@@ -71,7 +71,7 @@ input[type="text"] {
 
 button {
     background: #4c6ef5;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 10px;
     font-size: 16px;
     border: none;
@@ -83,6 +83,7 @@ button:hover {
     background: #3b5bdb;
 }
 
+
 /* Club Card */
 .club-cards {
   display: flex;
@@ -93,7 +94,7 @@ button:hover {
 
 
 .club-card {
-    border: 1px solid #ccc;
+    border: 1px solid #c90606;
     padding: 15px;
     margin: 10px 0;
     border-radius: 8px;
@@ -103,7 +104,7 @@ button:hover {
 
 /* Navbar */
 .navbar {
-    background: #ce0f0f;
+    background: #02385a;
     color: white;
     padding: 12px 20px;
     display: flex;
@@ -127,34 +128,12 @@ button:hover {
     font-weight: bold;
 }
 
-/* Message style */
-
-.messages {
-    margin-bottom: 20px;
-}
-
-.message {
-    padding: 12px 16px;
-    border-radius: 8px;
-    margin: 10px 0;
-    color: #000000;
-    font-weight: bold;
-}
-
-.message.success {
-    background: #38b000;
-}
-
-.message.error {
-    background: #d00000;
-}
-
 /* Delete Button */
 
 
 .delete-btn {
     color: white;
-    background-color: #e74c3c;
+    background-color: #cf1a05;
     padding: 5px 10px;
     border-radius: 4px;
     text-decoration: none;
@@ -162,4 +141,54 @@ button:hover {
 
 .delete-btn:hover {
     background-color: #c0392b;
+}
+
+/* intro page */
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: #c0392b;
+}
+.home-buttons {
+    text-align: center;  /* centers inline/inline-block elements inside */
+    margin-top: 20px;    /* space above buttons */
+}
+
+.home-buttons .button {
+    display: inline-block;  /* keeps them side by side */
+    margin: 0 10px;         /* space between buttons */
+    padding: 10px 20px;
+    background-color: #DA121A;  
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.home-buttons .button:hover {
+    background-color: #0056b3; /* darker blue on hover */
+}
+
+
+/* home page logo */
+
+.home-logo img {
+    width: 450px;       /* Makes the logo bigger/smaller */
+    height: auto;       /* Keeps the ratio correct */
+    display: block;     /* Makes it appear on its own line */
+    margin: 35px auto;  /* Centers it horizontally and adds space above/below */
+    border: 5px solid #FF0000; /* red border, 5px thick */
+    border-radius: 10px;        /* rounded corners, optional */
+    padding: 5px;               /* space between image and border */
 }

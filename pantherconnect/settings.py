@@ -84,7 +84,8 @@ else:
         "NAME": BASE_DIR / "db.sqlite3",
     }
 
-
+LOGIN_URL = '/login/'  # redirect here if a user is not logged in
+LOGIN_REDIRECT_URL = '/clubs/'
 
 
 # Password validation

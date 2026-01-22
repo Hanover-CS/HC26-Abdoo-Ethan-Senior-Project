@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PantherConnect</title>
+    <link rel="stylesheet" href="{% static 'clubs/css/style.css' %}">
+</head>
+<body>
+    <div class="home-container" style="text-align: center; margin-top: 40px;">
+    <h1 style="color: white; font-size: 48px; margin-bottom: 20px;">Welcome to PantherConnect!</h1>
+    <div class="container home-logo">
+        <img src="{% static 'clubs/images/pantherconnect-logo.png' %}" alt="PantherConnect Logo">
+    </div>
+
+    <div class="container home-buttons">
+        {% if user.is_authenticated %}
+            <p>Hello, {{ user.username }}!</p>
+            <a href="{% url 'club_list' %}" class="button">Go to Clubs</a>
+            <a href="{% url 'logout' %}" class="button">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="button">Login</a>
+            <a href="{% url 'signup' %}" class="button">Sign Up</a>
+        {% endif %}
+    </div>
+</body>
+</html>

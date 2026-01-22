@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - PantherConnect</title>
+    <link rel="stylesheet" href="{% static 'clubs/css/style.css' %}">
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+    </form>
+    <a href="{% url 'login' %}">Already have an account? Log in</a>
+</body>
+</html>

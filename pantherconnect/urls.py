@@ -4,11 +4,13 @@
 
 from django.contrib import admin
 from django.urls import include, path
+from clubs.views import login_view
 from clubs import views
 
 urlpatterns = [
-    path("members/", include("members.urls")),
-    path("clubs/", include("clubs.urls")),
-    path("admin/", admin.site.urls),
     path("", views.home_view, name="home"),
+    path("admin/", admin.site.urls),
+    path("clubs/", include("clubs.urls")),
+    path("", login_view, name="login"),
 ]
+

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PantherConnect</title>
+    <link rel="stylesheet" href="{% static 'clubs/css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to PantherConnect</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <h2>Login</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <hr>
+
+    <p>Don’t have an account?</p>
+    <a class="button" href="{% url 'signup' %}">Sign Up</a>
+</div>
+
+</body>
+</html>

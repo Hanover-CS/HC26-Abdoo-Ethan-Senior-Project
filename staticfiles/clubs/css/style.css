@@ -192,32 +192,3 @@ button:hover {
     border-radius: 10px;        /* rounded corners, optional */
     padding: 5px;               /* space between image and border */
 }
-
-/* Event List Styles */
-.event-list {
-    list-style: none;
-    padding: 0;
-    max-width: 700px;
-    margin: 40px auto;
-}
-
-.event-item {
-    background: #f2f2f2;
-    padding: 15px;
-    margin: 10px 0;
-    border-left: 6px solid #4c6ef5;
-    border-radius: 8px;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
-}
-
-.event-item strong {
-    display: block;
-    font-size: 18px;
-    color: #333;
-}
-
-.event-item p {
-    margin: 4px 0;
-    color: #555;
-}
-

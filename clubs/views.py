@@ -5,11 +5,13 @@
 
 from django.shortcuts import render, redirect
 from .forms import ClubForm
+from .forms import RegisterForm
 from .models import Club
+from .models import Event
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from .forms import RegisterForm
+
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
 
@@ -116,3 +118,8 @@ def home_view(request):
         "clubs/home.html",
         {"login_error": login_error, "signup_form": signup_form},
     )
+
+
+def event_list(request):
+    events = Event.objects.all().order_by('start_time')
+    return render(request, 'clubs/event_list.html', {'events': events})

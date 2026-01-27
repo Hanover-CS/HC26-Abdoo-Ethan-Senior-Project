@@ -1,0 +1,34 @@
+{% extends "clubs/home.html" %}  
+
+{% block content %}
+<h2>Upcoming Events</h2>
+<ul>
+    {% for event in events %}
+        <li>
+            <strong>{{ event.title }}</strong><br>
+            {{ event.start_time }} - {{ event.end_time }}<br>
+            {{ event.description }}
+        </li>
+    {% empty %}
+        <li>No events scheduled.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'clubs/css/style.css' %}">
+
+<h2>Upcoming Events</h2>
+
+<ul class="event-list">
+  {% for event in events %}
+    <li class="event-item">
+      <strong>{{ event.title }}</strong>
+      <p><strong>Date:</strong> {{ event.start_time|date:"M d, Y H:i" }}</p>
+      <p>{{ event.description }}</p>
+    </li>
+  {% empty %}
+    <li>No events scheduled yet.</li>
+  {% endfor %}
+</ul>
+

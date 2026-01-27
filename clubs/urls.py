@@ -14,5 +14,7 @@ urlpatterns = [
     path('add/', views.add_club, name='add_club'),
     path('', views.club_list, name='club_list'),
     path("delete/<int:club_id>/", views.delete_club, name="delete_club"),
+    path('events/', views.event_list, name='event_list'),
+
 
 ]

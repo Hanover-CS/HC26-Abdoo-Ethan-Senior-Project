@@ -12,5 +12,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("clubs/", include("clubs.urls")),
     path("", login_view, name="login"),
+    
 ]
 

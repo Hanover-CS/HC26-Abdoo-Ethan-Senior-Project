@@ -43,12 +43,11 @@ def signup_view(request):
 
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect("club_list")
+        return redirect("club_list")  # already logged in
 
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
@@ -56,7 +55,8 @@ def login_view(request):
         else:
             messages.error(request, "Invalid username or password")
 
-    return render(request, "clubs/entry.html")
+    return render(request, "clubs/login.html")  
+
 
 
 def logout_view(request):

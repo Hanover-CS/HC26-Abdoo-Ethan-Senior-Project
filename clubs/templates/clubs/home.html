@@ -4,21 +4,80 @@
 <head>
     <title>PantherConnect</title>
     <link rel="stylesheet" href="{% static 'clubs/css/style.css' %}">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #4b6cb7, #182848); /* subtle blue gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .home-container {
+            background: rgba(255, 255, 255, 0.1); /* semi-transparent card */
+            backdrop-filter: blur(10px);
+            padding: 50px 60px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .home-container h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(236, 14, 14, 0.6);
+        }
+
+        .home-logo img {
+            width: 200px;
+            margin-bottom: 40px;
+        }
+
+        .home-buttons a.button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #182848;
+            background-color: #ffffff;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .home-buttons a.button:hover {
+            background-color: #4b6cb7;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .home-container p {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="home-container" style="text-align: center; margin-top: 40px;">
-    <h1 style="color: white; font-size: 48px; margin-bottom: 20px;">Welcome to PantherConnect!</h1>
-    <div class="container home-logo">
-        <img src="{% static 'clubs/images/pantherconnect-logo.png' %}" alt="PantherConnect Logo">
-    </div>
+    <div class="home-container">
+        <h1>Welcome to PantherConnect!</h1>
+        <div class="home-logo">
+            <img src="{% static 'clubs/images/pantherconnect-logo.png' %}" alt="PantherConnect Logo">
+        </div>
 
-    <div class="container home-buttons">
-        {% if user.is_authenticated %}
-            <p>Hello, {{ user.username }}!</p>
-            <a href="{% url 'club_list' %}" class="button">Go to Clubs</a>
-            <a href="{% url 'logout' %}" class="button">Logout</a>
-    
-        {% endif %}
+        <div class="home-buttons">
+            {% if user.is_authenticated %}
+                <p>Hello, {{ user.username }}!</p>
+                <a href="{% url 'club_list' %}" class="button">Go to Clubs</a>
+                <a href="{% url 'logout' %}" class="button">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="button">Log In</a>
+                <a href="{% url 'register' %}" class="button">Sign Up</a>
+            {% endif %}
+        </div>
     </div>
 </body>
 </html>

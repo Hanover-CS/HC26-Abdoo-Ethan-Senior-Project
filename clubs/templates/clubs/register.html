@@ -5,13 +5,25 @@
     <title>Sign Up - PantherConnect</title>
     <link rel="stylesheet" href="{% static 'clubs/css/style.css' %}">
 </head>
-<body>
-    <h2>Sign Up</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign Up</button>
-    </form>
-    <a href="{% url 'login' %}">Already have an account? Log in</a>
+<body style="background-color: #ffffff; font-family: Arial, sans-serif;">
+
+    <div class="register-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+        
+        <h1 style="color: rgb(43, 10, 129); font-size: 48px; margin-bottom: 30px;">Create Your Account</h1>
+
+        <div class="register-form-wrapper" style="background: rgba(233, 230, 230, 0.7); padding: 40px; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+            <form method="post" style="display: flex; flex-direction: column; gap: 15px;">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="button" style="padding: 10px 20px; font-size: 18px; border-radius: 8px; cursor: pointer;">Sign Up</button>
+            </form>
+        </div>
+
+        <p style="color: white; margin-top: 20px;">
+            Already have an account? <a href="{% url 'login' %}" style="color: #ffd700;">Log In</a>
+        </p>
+
+    </div>
+
 </body>
 </html>

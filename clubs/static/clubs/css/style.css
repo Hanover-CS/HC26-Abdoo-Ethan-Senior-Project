@@ -221,3 +221,50 @@ button:hover {
     color: #555;
 }
 
+/* Add Club Form Styles */
+
+.form-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.form-card {
+    background: #848181;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.form-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.form-card p {
+    margin-bottom: 15px;
+}
+
+.form-card input,
+.form-card textarea,
+.form-card select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.button.primary {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}

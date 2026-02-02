@@ -16,7 +16,9 @@ Purpose: Displays all the clubs in a card layout.
     <p><strong>City:</strong> {{ club.city }}</p>
     <p><strong>Country:</strong> {{ club.country }}</p>
     <p><strong>Contact:</strong> {{ club.contact_email }}</p>
-    <a href="{% url 'delete_club' club.id %}" class="delete-btn">Delete</a>
+   {% if user.is_superuser %}
+    <a href="{% url 'delete_club' club.id %}" class="button delete-button">Delete</a>
+    {% endif %}
 </div>
 
   {% empty %}
